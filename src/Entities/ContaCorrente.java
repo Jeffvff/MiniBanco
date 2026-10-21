@@ -29,6 +29,9 @@ public class ContaCorrente extends Conta {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Conta corrente - " + super.toString() + String.format(" | Limite: %.2f | Tarifa mensal: %.2f%n", limite, tarifaMensal);
     }
+
+
+
 }

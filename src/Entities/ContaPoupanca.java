@@ -23,5 +23,8 @@ public class ContaPoupanca extends Conta {
         creditar(rendimento);
     }
 
-
+    @Override
+    public String toString() {
+        return "Conta poupança - " + super.toString() + String.format(" | Taxa rendimento: %.2f%n", taxaRendimento);
+    }
 }

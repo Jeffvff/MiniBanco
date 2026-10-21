@@ -43,6 +43,6 @@ public abstract class Conta {
 
     @Override
     public String toString() {
-        return super.toString();
+        return String.format("Numero da conta: %d | Nome titular: %s | Saldo: %.2f", numero, titular, saldo);
     }
 }

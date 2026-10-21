@@ -16,7 +16,33 @@ public class Banco {
         contas.add(new ContaPoupanca(numero, titular, saldoInicial, taxaRendimento));
     }
 
-    
+    public Conta buscarPorNumero(int numero) {
+        for (Conta c : contas) {
+            if (c.getNumero() == numero) {
+                return c;
+            }
+        }
+        return null;
+    }
 
+    public boolean transferir(Conta origem, Conta destino, double valor) {
+        if (origem.sacar(valor)) {
+            destino.depositar(valor);
+            return true;
+        }
+        return false;
+    }
+
+    public void fecharMesDeTodas() {
+        for (Conta c : contas) {
+            c.fecharMes();
+        }
+    }
+
+    public void listarContas() {
+        for (Conta c : contas) {
+            System.out.print(c);
+        }
+    }
 
 }
